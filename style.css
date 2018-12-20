@@ -1,0 +1,270 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  height: 30px;
+  color: white;
+  background-color: #537B6F;
+  display: inline-block;
+  border: none;
+  
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);      /*RGB Alpha*/
+  margin-right: 20px;           /*distance of right margin to the screen edge*/
+  font-family: Courier, sans-serif;        /*prerequisite selcted font and fallback font*/
+  overflow: auto;
+  border-radius: 3px;         /*fillet circle radius*/
+}
+
+#features {          /*setting of #feature(id)> setting of .map-overlay(class)*/
+  top: 60;
+  left: 0;
+  height: 300px;
+  margin-top: 10px;
+  width: 350px;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.legend {
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 18px;
+  height: 200px;
+  margin-bottom: 40px;
+  width: 300px;
+  display: none;
+}
+
+.legend-key {
+  display: inline-block;
+  border-radius: 100%;  /* adds a border radius, a value of 100% changes a box to a circle */
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+#legend-education { display: block; }
+#layer-income { display: none; }
+#screen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 1;
+    display: none;
+}
+
+
+
+.modal {
+	  display: none;
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 150px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 30px;
+    font-family: Courier;
+}
+
+.modal .close-button {     /* relative setting. All setting of .close-button is relative to .modal*/
+	color: #ccc;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 10px;
+	line-height: 30px;
+	font-size: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal .close-button:hover {        /* target:handler{} show change when you operate it*/
+	color: #bbb;
+}
+
+#screen {                          /*background of map covered with black when open about project modal*/
+	display: none;
+  top: 50px;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background-color: black;
+	opacity: 0.6;
+	z-index: 1;
+}
+
+
+.button-default {
+    position: relative;
+    margin: 20px;
+    background: #F7F0D8;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: larger;
+    font-family: Courier;
+    cursor: pointer;    
+}
+
+.button-default:hover {
+    background: #F1E4B9;
+}
+
+.button-default:active {
+    background: black;
+}
+
+#layers-control {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 1000;
+    margin: 10px;
+    width: 200px;
+}
+
+
+#about {
+    position: fixed;
+    top: 0px;
+    left: 450px;
+    padding: 5px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    text-align: center;
+    font-family: Courier;
+    color: white;
+    background: #7DB8A6;
+}
+
+#layers-control a {
+    left:700px;
+    font-size: 13px;
+    color: black;
+    display: block;
+    margin: 0 0 5px 0;
+    padding: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    text-align: left;
+    background-color: #FAF6E7;
+}
+
+#layers-control a:last-child {
+    border: none;
+}
+
+#layers-control a:hover {
+    background-color: #F7F0D8;
+}
+
+#layers-control a.active {
+    background-color: #DACB9B;
+    color: black;
+}
+
+#layers-control a.active:hover {
+    background: #F7F0D8;
+}
+
+#coordinate {
+    display: block;
+    position: relative;
+    width: 500px;
+    top: 840px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);      /*RGB Alpha*/
+    margin-right: 20px;           /*distance of right margin to the screen edge*/
+    font-family: Courier, sans-serif;        /*prerequisite selcted font and fallback font*/
+    border-radius: 3px; 
+}
+
+ #info {
+    display: block;
+    position: relative;
+    padding: 10px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    font-family: Courier;
+    text-align: center;
+    color: #222;
+    background: #E3ECE7;
+    }
+
+
+#showChart {
+    position: fixed;
+    left: 700px;
+    top: 19px;
+    padding: 5px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    font-family: Courier;
+    text-align: center;
+    color: white;
+    background: #7DB8A6;
+}
+#showChart a:hover {
+    background-color: #618F81;
+}
+
+#reset {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    padding: 5px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    font-family: Courier;
+    text-align: center;
+    color: white;
+    background: #7DB8A6;
+}
+
+#container{
+position: fixed;
+top: 50%;
+width:100%;
+text-align: center;
+margin-top: -41px;
+}
+
+

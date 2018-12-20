@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>Demography Map</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://use.fontawesome.com/0ae7c1f7c9.js"></script>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body>
+    <!-- Map  -->
+  <div id="map"></div>
+  <pre id='info'>
+    <h1>Virginia Demography Map</h1>
+  </pre>
+  <pre id='coordinate'></pre>
+
+<div id="container">
+      <button id="showChart">General Racial Percentage</button>
+</div>
+<div id="dialogBox" style="display: none;">
+    <div id="chartContainer" class="dialog" style="height: 400px; width: 100%;"></div>
+</div>
+
+
+
+
+
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- Info Window  -->
+     
+  
+  <div class='map-overlay' id='features'>    <!-- id -->
+    <h2>Regional Information</h2>
+      <div id='info-window-body'>
+    	<p>Hover over each block to learn more infomation.</p>
+      </div>
+  </div>
+    
+  <div class='map-overlay legend' id='legend-education'></div>      <!-- legend frame  -->
+  <div class='map-overlay legend' id='legend-income'></div>      <!-- legend frame  -->
+  <div class='map-overlay legend' id='legend-white'></div>
+  <div class='map-overlay legend' id='legend-black'></div>
+  <div class='map-overlay legend' id='legend-asian'></div>
+  <div class='map-overlay legend' id='legend-hawaiian'></div>
+  <div class='map-overlay legend' id='legend-hispanic'></div>
+  <div class='map-overlay legend' id='legend-americanindian'></div>
+    
+  <!-- About this map button -->
+  <button id="about" class='button-default'>About this map</button>
+  
+  <!-- A modal, hidden by default in our css, which provides info about this project when shown -->
+  <div class='modal'>
+    
+    <h2 class='modal-title'>About this project</h2>
+    
+    <div class='modal-body'><p>Virginia Racialization Condition map contains information about racial distribution, income level and degree of education. It helps with analyzing social and economic condition of virginia. This map is an assignment created in the Scripting Civic Engagement seminar at the University of Virginia (Fall 2018), taught by Andrea Hansen Phillips. The map was made by Qiyao Li.</p><p>Map data courtesy of <a href='https://www.mapbox.com/studio/'>Mapbox Studio</a> and the <a href='https://www.census.gov/'>United States Census Bereau</a></p><p>For questions or to improve this map, contact <a href='ql3hv@virginia.edu'>Qiyao Li</a></p></div>
+    
+    <button class='close-button'>&times;</button>  <!-- A special "x" character (the multiply sign) used in close buttons -->  
+  </div>
+  <div id="screen"></div> <!-- Black overlay behind the modal -->
+
+  <div id='layers-control'></div>
+  <pre id='coordinates' class='coordinates'></pre>
+  <button id="reset" class='button-default'>Reset map</button>
+
+</body>
+</body>
+    <script src="\map.js"></script>
+</html>
